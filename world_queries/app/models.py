@@ -27,7 +27,7 @@ class Country(db.Model):
 
     # Relación con CountryLanguage
     languages = relationship('CountryLanguage', back_populates='country')
-
+    cities = relationship('City', back_populates='country')
 class City(db.Model):
     __tablename__ = 'city'  # Nombre de la tabla
 
@@ -52,6 +52,7 @@ class CountryLanguage(db.Model):
 
     # Relación con Country
     country = relationship('Country', back_populates='languages')
+
 
 
 
