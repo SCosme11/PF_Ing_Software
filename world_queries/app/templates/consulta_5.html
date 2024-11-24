@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta 5: Idiomas Oficiales por País</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        .container {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Idiomas Oficiales en el País: {{ codigo_pais }}</h1>
+        {% if resultados %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Idioma</th>
+                        <th>Porcentaje</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for resultado in resultados %}
+                        <tr>
+                            <td>{{ resultado.idioma }}</td>
+                            <td>{{ resultado.porcentaje }}%</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No se encontraron idiomas oficiales para el país con código {{ codigo_pais }}.</p>
+        {% endif %}
+    </div>
+
+</body>
+</html>
