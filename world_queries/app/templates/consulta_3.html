@@ -1,26 +1,28 @@
 {% extends "base.html" %}
 
-{% block title %}
-Consulta 3: Idiomas Oficiales por País
-{% endblock %}
+{% block title %}Consulta de Lenguajes por País{% endblock %}
 
 {% block content %}
-<h2>Consulta 3: Idiomas Oficiales del País ({{ codigo_pais }})</h2>
-<table border="1">
-    <thead>
-        <tr>
-            <th>Idioma</th>
-            <th>Porcentaje de Hablantes</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for idioma in resultados %}
-        <tr>
-            <td>{{ idioma.idioma }}</td>
-            <td>{{ idioma.porcentaje }}%</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
-<a href="{{ url_for('index') }}">Volver a Inicio</a>
+    <div class="container mt-5">
+        <h2 class="mb-4">Número de Lenguajes por País</h2>
+        <div class="table-container">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>País</th>
+                        <th>Número de Lenguajes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for pais, num_lenguajes in resultados %}
+                    <tr>
+                        <td>{{ pais }}</td>
+                        <td>{{ num_lenguajes }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 {% endblock %}
+
