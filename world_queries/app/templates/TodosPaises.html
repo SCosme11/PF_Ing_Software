@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Todos los países{% endblock %}
+
+{% block content %}
+    <h2>Selecciona un país para ver más detalles</h2>
+    <div class="consulta-links">
+        {% for pais in resultados %}
+            <a href="/consulta5/{{ pais[1] }}" class="consulta-link">{{ pais[0] }}</a>
+        {% endfor %}
+    </div>
+{% endblock %}
