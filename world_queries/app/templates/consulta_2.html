@@ -1,10 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block title %}
+Consulta 2: Países con Más de 50M de Habitantes
+{% endblock %}
+
+{% block content %}
+<h2>Consulta 2: Países con Más de 50M de Habitantes</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Nombre del País</th>
+            <th>Población</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for pais in resultados %}
+        <tr>
+            <td>{{ pais.nombre }}</td>
+            <td>{{ pais.poblacion | int | format }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{{ url_for('index') }}">Volver a Inicio</a>
+{% endblock %}
