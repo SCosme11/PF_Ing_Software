@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+    <h2>Bienvenido a World Queries</h2>
+    <p>Consulta información sobre países, ciudades y lenguajes.</p>
+    <a href="/consulta1">Ver Consulta 1</a>
+{% endblock %}
