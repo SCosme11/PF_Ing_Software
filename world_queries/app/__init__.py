@@ -15,4 +15,8 @@ def create_app():
     #Inicializa la db
     db.init_app(app)
 
+    with app.app_context():
+        from . import views, models  # Importar rutas y modelos
+        db.create_all()  # Crear tablas si no existen
+
     return app
