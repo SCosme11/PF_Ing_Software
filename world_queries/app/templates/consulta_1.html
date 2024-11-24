@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block title %}Consulta 1{% endblock %}
+
+{% block content %}
+    <h2>Resultados de Consulta 1</h2>
+    <p>Población promedio por ciudad: {{ resultados.poblacion_promedio }}</p>
+    <a href="/">Volver al Inicio</a>
+{% endblock %}
