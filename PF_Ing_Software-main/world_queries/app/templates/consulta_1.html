@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Población Promedio{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <!-- Título principal de la página -->
+    <h2 class="mb-4">Población Promedio por Continente</h2>
+
+    <!-- Tabla para mostrar los resultados -->
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>Continente</th>
+                <th>Población Promedio</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in resultados %}
+            <tr>
+                <td>{{ row.Continent }}</td>
+                <td>{{ row.AveragePopulation | round(2) }}</td> <!-- Redondeamos a 2 decimales -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
